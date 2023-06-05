@@ -35,12 +35,16 @@ textarea {
   height: 100vh;
 }
 
+.text-2xl {
+  font-size: 2rem;
+}
+
 .text-3xl {
   font-size: 2.5rem;
 }
 
 .bg-green-900{
-  background-color: #5ccb66;
+  background-color: rgb(20 83 45);
 }
 
 .text-white {
@@ -57,6 +61,16 @@ textarea {
 
 .justify-center {
   justify-content: center;
+}
+
+.py-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .py-3 {
@@ -117,4 +131,25 @@ textarea {
 }
 .text-black {
   color: rgb(17 24 39);
+}
+
+.text-white {
+  color: white;
+}
+
+.border-black {
+  border-style: solid;
+  border-color: rgb(17 24 39);
+  border-width: 0.2rem;
+}
+
+.text-border-green {
+  color: rgb(20 83 45);
+  -webkit-text-stroke: 1.5px rgb(17 24 39);
+}
+
+.bot-border {
+  border-bottom: solid;
+  border-bottom-color: rgb(17 24 39);
+  border-bottom-width: 6px;
 }
