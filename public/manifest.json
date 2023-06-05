@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Barykada",
+  "name": "Barykada strona intertnetowa",
   "icons": [
     {
       "src": "letter-b_icon-icons.com_53956.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "3665896.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "3665896.png",
       "type": "image/png",
       "sizes": "512x512"
     }
