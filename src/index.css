@@ -93,25 +93,15 @@ textarea {
   padding-right: 2rem;
 }
 
-.bg-white {
-  background-color: #fff;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
 
-.border-2 {
+.border-white {
   border-style: solid;
   border-width: 2px;
-}
-
-.border-white {
   border-color: white;
-}
-
-.rounded {
-  border-radius: 0.75rem;
+  border-radius: 1.25rem;
 }
 
 .w-64 {
@@ -137,12 +127,6 @@ textarea {
   color: white;
 }
 
-.border-black {
-  border-style: solid;
-  border-color: rgb(17 24 39);
-  border-width: 0.2rem;
-}
-
 .text-border-green {
   color: rgb(20 83 45);
   -webkit-text-stroke: 1.5px rgb(17 24 39);
@@ -152,4 +136,18 @@ textarea {
   border-bottom: solid;
   border-bottom-color: rgb(17 24 39);
   border-bottom-width: 6px;
+}
+
+.main-button {
+  text-align: center;
+  background-color: #fff;
+  width: 20rem;
+  display: block;
+  border-style: solid;
+  border-color: rgb(17 24 39);
+  border-width: 0.2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Papa from 'papaparse';
 
 const Stopien = () => {
     const [rows, setRows] = React.useState([]);
@@ -16,7 +17,7 @@ const Stopien = () => {
         fetch(URL)
             .then(data => {
                 console.log(data)
-                setRows(data.split("\n"));
+                setRows(data.split(''));
             });
     }, []);
 

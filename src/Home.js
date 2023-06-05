@@ -13,12 +13,12 @@ const Home = () => {
                     </h2>
                     <div className="text-black text-3xl flex items-center justify-center">
                         <div className="px-4 py-4">
-                            <Link className="bg-white w-64 py-3 block border-black text-center rounded cursor-pointer" to="/Sprawnosci">
+                            <Link className="main-button" to="/Sprawnosci">
                                 Sprawności
                             </Link>
                         </div>
                         <div className="px-4 py-4">
-                            <Link className="bg-white w-64 py-3 block border-black text-center rounded cursor-pointer" to="/Stopien">
+                            <Link className="main-button" to="/Stopien">
                                 Stopień
                             </Link>
                         </div>
