@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/barykada2/static/css/main.9bf642c3.css",
-    "main.js": "/barykada2/static/js/main.2f1026d0.js",
+    "main.css": "/barykada2/static/css/main.468124f5.css",
+    "main.js": "/barykada2/static/js/main.656371c4.js",
     "static/js/787.fc656ed9.chunk.js": "/barykada2/static/js/787.fc656ed9.chunk.js",
     "index.html": "/barykada2/index.html",
-    "main.9bf642c3.css.map": "/barykada2/static/css/main.9bf642c3.css.map",
-    "main.2f1026d0.js.map": "/barykada2/static/js/main.2f1026d0.js.map",
+    "main.468124f5.css.map": "/barykada2/static/css/main.468124f5.css.map",
+    "main.656371c4.js.map": "/barykada2/static/js/main.656371c4.js.map",
     "787.fc656ed9.chunk.js.map": "/barykada2/static/js/787.fc656ed9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bf642c3.css",
-    "static/js/main.2f1026d0.js"
+    "static/css/main.468124f5.css",
+    "static/js/main.656371c4.js"
   ]
 }
