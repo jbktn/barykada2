@@ -4,7 +4,7 @@ import Stopien from "./stpn";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/stopien" element={<Stopien/>}/>
