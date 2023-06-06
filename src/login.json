@@ -1,0 +1,95 @@
+{
+    "users": [
+      {
+        "id": "jakubprazuch",
+        "password": "jakpra274",
+        "name": "Jakub Prażuch",
+        "role": "drużynowy"
+      },
+      {
+        "id": "jakubpomorski",
+        "password": "jakpom359",
+        "name": "Jakub Pomorski",
+        "role": "przyboczny"
+      },          
+      {
+        "id": "patrykzwierz",
+        "password": "patzwi076",
+        "name": "Patryk Zwierz",
+        "role": "przyboczny"
+      },
+      {
+        "id": "pawełpacyna",
+        "password": "pawpac294",
+        "name": "Paweł Pacyna",
+        "role": "przyboczny"
+      },    
+      {
+        "id": "franciszekprażuch",
+        "password": "frapra158",
+        "name": "Franciszek Prażuch",
+        "role": "zastępowy"
+      }, 
+      {
+        "id": "antonipuchala",
+        "password": "antpuc615",
+        "name": "Antoni Puchala",
+        "role": "brak"
+      },  
+      {
+        "id": "adambartosz",
+        "password": "adabar111",
+        "name": "Adam Bartosz",
+        "role": "brak"
+      },
+      {
+        "id": "bartoszwidłak",
+        "password": "barwid",
+        "name": "Bartosz Widłak",
+        "role": "brak"
+      },
+      {
+        "id": "tadeuszmleczko",
+        "password": "tadmle094",
+        "name": "Tadeusz Mleczko",
+        "role": "brak"
+      },  
+      {
+        "id": "janmleczko",
+        "password": "janmle",
+        "name": "Jan Mleczko",
+        "role": "brak"
+      },
+      {
+        "id": "krzysztofpacyna",
+        "password": "krzpac031",
+        "name": "Krzysztof Pacyna",
+        "role": "brak"
+      },
+      {
+        "id": "maksymilianbajorekdołba",
+        "password": "makbaj872",
+        "name": "Maksymilian Bajorek-Dołba",
+        "role": "brak"
+      }, 
+      {
+        "id": "oliwierkorbut",
+        "password": "olikor718",
+        "name": "Oliwier Korbut",
+        "role": "brak"
+      },
+      {
+        "id": "wojciechbańdo",
+        "password": "wojbań",
+        "name": "Wojciech Bańdo",
+        "role": "brak"
+      },
+      {
+        "id": "adamstachów",
+        "password": "adasta",
+        "name": "Adam Stańchów",
+        "role": "brak"
+      }   
+    ]
+  }
+  
