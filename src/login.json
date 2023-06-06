@@ -1,0 +1,20 @@
+{
+    "users": [
+      {
+        "id": "jakubprazuch",
+        "password": "jakpra274",
+        "name": "Jakub Prażuch"
+      },
+      {
+        "id": "jakubpomorski",
+        "password": "jakpom359",
+        "name": "Jakub Pomorski"
+      },    
+      {
+        "id": "antonipuchala",
+        "password": "antpuc615",
+        "name": "Antoni Puchala"
+      }     
+    ]
+  }
+  

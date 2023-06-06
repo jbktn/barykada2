@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import $ from "jquery";
 
 const Sprawnosci = () => {  
@@ -13,13 +14,10 @@ const Sprawnosci = () => {
         const data = await $.get(url);
         const rows = data.split("\n");
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const searchValue = urlParams.get("search");
-        let id = "";
-
-        if (searchValue !== null) {
-          id = searchValue;
-        }
+        const id = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("userID="))
+        ?.split("=")[1];
 
         const filteredRows = rows.filter((row, index) => {
           if (index === 0) return false; // Skip header row
@@ -41,7 +39,11 @@ const Sprawnosci = () => {
   return (
     <div>
       <h1 className="py-2 px-2 text-white font-semibold text-2xl text-border-green bot-border">
-        40 KDH Barykada
+      <Link                
+          to={`/`}
+        >
+          40 KDH Barykada
+        </Link>
       </h1>
       <div className="h-100vh flex text-white bg-green-900 items-center justify-center">
         <table id="arkusz-table">
