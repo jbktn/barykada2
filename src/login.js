@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userData from "./login.json";
+import logo from "./logo.svg";
 
 const Login = () => {
   const navigate = useNavigate(); // Hook useNavigate
@@ -43,10 +44,8 @@ const Login = () => {
 
   return (
     <div>
-      <h1 className="py-2 px-2 text-white font-semibold text-2xl text-border-green bot-border">
-        40 KDH Barykada
-      </h1>
-      <div className="h-100vh flex text-white bg-green-900 items-center justify-center">
+      <img className="flex logo margin-top" src={logo} alt="Logo"/>      
+      <div className="flex margin-top">
         <div>
           <input
             type="text"
@@ -62,7 +61,7 @@ const Login = () => {
             value={loginData.password}
             onChange={handleInputChange}
           />
-          <button onClick={handleLogin}>Zaloguj</button>
+          <button className="logo" onClick={handleLogin}>Zaloguj</button>
 
           {loginError && (
             <p>Niepoprawne dane logowania. Spróbuj ponownie.</p>
