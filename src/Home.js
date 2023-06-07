@@ -1,6 +1,29 @@
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import userData from "./login.json";
+
+const findUserNameById = (id) => {
+  const user = userData.users.find((user) => user.id === id);
+  return user ? user.name : "";
+};
 
 const Home = () => {
+    const id = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("userID="))
+        ?.split("=")[1];
+
+    const navigate = useNavigate();
+    const userName = findUserNameById(id);
+
+    console.log(id);
+
+    React.useEffect(() => {
+        if (id === undefined) {
+            navigate("/login");
+        }
+    }, [id, navigate]);
+
     return (
         <div>
             <h1 className="py-2 px-2 text-white font-semibold text-2xl text-border-green bot-border">
@@ -28,5 +51,6 @@ const Home = () => {
         </div>
     )
 }
+
 
 export default Home;
