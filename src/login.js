@@ -47,22 +47,30 @@ const Login = () => {
         40 KDH Barykada
       </h1>
       <div className="h-100vh flex text-white bg-green-900 items-center justify-center">
-        <div>
-          <input
-            type="text"
-            name="username"
-            placeholder="Login"
-            value={loginData.username}
-            onChange={handleInputChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Hasło"
-            value={loginData.password}
-            onChange={handleInputChange}
-          />
-          <button onClick={handleLogin}>Zaloguj</button>
+        <div className="">
+          <div className="login">
+            <div className="login-input-l">
+              <input
+                  type="text"
+                  name="username"
+                  placeholder="Login"
+                  value={loginData.username}
+                  onChange={handleInputChange}
+              />
+            </div>
+            <div className="login-input-r">
+              <input
+                  type="password"
+                  name="password"
+                  placeholder="Hasło"
+                  value={loginData.password}
+                  onChange={handleInputChange}
+              />
+            </div>
+            <div className="login-button">
+              <button onClick={handleLogin}>Zaloguj</button>
+            </div>
+          </div>
 
           {loginError && (
             <p>Niepoprawne dane logowania. Spróbuj ponownie.</p>

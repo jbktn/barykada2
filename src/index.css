@@ -205,3 +205,45 @@ textarea {
   border-radius: 0.75rem;
   cursor: pointer;
 }
+
+.login {
+  background-color: rgb(17 24 39);
+  border-style: solid;
+  border-color: rgb(17 24 39);
+  border-width: 5px;
+  border-radius: 1.2rem;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: rgb(17 24 39);
+}
+
+.login-input-l {
+  border-top-left-radius: 0.9rem;
+  border-bottom-left-radius: 0.9rem;
+  background-color: white;
+  padding-top: 0.28rem;
+  padding-bottom: 0.28rem;
+  border-color: rgb(17 24 39);
+  border-width: 0.1rem;
+  border-style: solid;
+}
+
+.login-input-r {
+  border-top-right-radius: 0.9rem;
+  border-bottom-right-radius: 0.9rem;
+  background-color: white;
+  padding-top: 0.28rem;
+  padding-bottom: 0.28rem;
+  border-color: rgb(17 24 39);
+  border-width: 0.1rem;
+  border-style: solid;
+}
+
+.login-button {
+  color: white;
+  background-color: rgb(17 24 39);
+  cursor: pointer;
+  padding: 0.3rem 1.2rem 0.3rem 1.5rem;
+}
