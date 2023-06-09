@@ -55,7 +55,7 @@ const Sprawnosci = () => {
         </Link>
         <nav>
           <ul className="nav__links">
-            <li>
+            <li className="green-text">
               <Link to={`/sprawnosci`}>Sprawności</Link>
             </li>
             <li>

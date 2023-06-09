@@ -35,7 +35,8 @@ header {
 .second-button,
 .overlay__content a {  
   font-weight: 500;
-  color: #00A54D;
+  color: white;
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -53,7 +54,11 @@ header {
 }
 
 .nav__links li a:hover {
-  color: #007436;
+  color: #00A54D;
+}
+
+.green-text a{
+  color: #00A54D;
 }
 
 .second-button {

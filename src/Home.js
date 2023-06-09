@@ -30,7 +30,7 @@ const Home = () => {
         <Link to={`/`}><img className="logo" src={logo} alt="Logo"/></Link>       
             <nav>
                 <ul className="nav__links">
-                    <li><Link to={`/sprawnosci`}>Sprawności</Link></li>
+                    <li><Link to={`/sprawnosci`}> Sprawności</Link></li>
                     <li><Link to={`/stopien`}>Stopień</Link></li>
                     <li><Link to={`/login`}>inne</Link></li>
                 </ul>

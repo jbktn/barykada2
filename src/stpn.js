@@ -120,7 +120,7 @@ const Stopien = () => {
             <li>
               <Link to={`/sprawnosci`}>Sprawności</Link>
             </li>
-            <li>
+            <li className="green-text">
               <Link to={`/stopien`}>Stopień</Link>
             </li>
             <li>
