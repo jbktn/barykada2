@@ -34,9 +34,16 @@ const Stopien = () => {
 
             switch (stopien) {
               case "młodzik":
-                url =
+              case "wywiadowca":
+                if (stopien === "młodzik") {
+                  url =
                   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=0&single=true&output=tsv";
-
+                }
+                else
+                {
+                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=53519936&single=true&output=tsv";
+                }
+                
                 $.get(url, function (data) {
                   var rows = data.split("\n");
                   var table = [];
@@ -54,8 +61,8 @@ const Stopien = () => {
                     }
                   }
 
-                  for (var i = 1; i < rows.length; i++) {
-                    var cells = rows[i].split("\t");
+                  for (var i = 1; i < rows.length; i++) {                    
+                    var cells = rows[i].replace(/\r/g, "").split("\t");
                     var row = [];
 
                     var indexCell = i + ". "; // Dodawanie numeracji
@@ -81,9 +88,7 @@ const Stopien = () => {
                   setTableData(table);
                 });
 
-                break;
-              case "wywiadowca":
-                break;
+                break;              
               case "ćwik":
                 console.log("ćwik");
                 break;
@@ -135,16 +140,19 @@ const Stopien = () => {
       <div className="flex margin-top">
         <div>
           <table id="arkusz-table">
-            {tableData.map((row, index) => (
-              <tr key={index}>
-                {row.map((cell, index) => (
-                  <td key={index}>{cell}</td>
-                ))}
-              </tr>
-            ))}
+            <tbody>
+              {tableData.map((row, index) => (
+                <tr key={index}>
+                  {row.map((cell, index) => (
+                    <td key={index}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       </div>
+
     </div>
   );
 };

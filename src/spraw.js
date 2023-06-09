@@ -72,13 +72,15 @@ const Sprawnosci = () => {
       </header>
       <div className="flex margin-top">
         <table id="arkusz-table">
-          {tableData.map((row, index) => (
-            <tr key={index}>
-              {row.map((cell, index) => (
-                <td key={index}>{cell}</td>
-              ))}
-            </tr>
-          ))}
+          <tbody>
+            {tableData.map((row, index) => (
+              <tr key={index}>
+                {row.map((cell, index) => (
+                  <td key={index}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
