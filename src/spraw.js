@@ -37,53 +37,67 @@ const Sprawnosci = () => {
 
         setTableData(tableData);
         setFetchingData(false); // Mark fetching as completed
+
+        // Zapisz tabelę jako cookie
+        const tableCookie = JSON.stringify(tableData);
+        document.cookie = `arkuszTable=${tableCookie}`;
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
-    if (fetchingData) {
-      fetchData();
+    // Sprawdź, czy tabela jest dostępna w cookie i uaktualnij stan
+    const tableCookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("arkuszTable="))
+      ?.split("=")[1];
+
+    if (tableCookie) {
+      const parsedTableData = JSON.parse(tableCookie);
+      setTableData(parsedTableData);
+      setFetchingData(false); // Mark fetching as completed
     }
+    fetchData();
+    
   }, [fetchingData, navigate]);
 
   return (
     <div>
-      <header>
-        <Link to={`/`}>
-          <img className="logo" src={logo} alt="Logo" />
-        </Link>
-        <nav>
-          <ul className="nav__links">
-            <li className="green-text">
-              <Link to={`/sprawnosci`}>Sprawności</Link>
-            </li>
-            <li>
-              <Link to={`/stopien`}>Stopień</Link>
-            </li>
-            <li>
-              <Link to={`/login`}>inne</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="second-button">
-          <Link to={`/`}>Twój profil</Link>
-        </div>
-      </header>
-      <div className="flex margin-top">
-        <table id="arkusz-table">
-          <tbody>
-            {tableData.map((row, index) => (
-              <tr key={index}>
-                {row.map((cell, index) => (
-                  <td key={index}>{cell}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <header>
+      <Link to={`/`}>
+        <img className="logo" src={logo} alt="Logo" />
+      </Link>
+      <nav>
+        <ul className="nav__links">
+          <li className="green-text">
+            <Link to={`/sprawnosci`}>Sprawności</Link>
+          </li>
+          <li>
+            <Link to={`/stopien`}>Stopień</Link>
+          </li>
+          <li>
+            <Link to={`/login`}>inne</Link>
+          </li>
+        </ul>
+      </nav>
+      <div className="second-button">
+        <Link to={`/`}>Twój profil</Link>
       </div>
+    </header>
+    <div className="flex margin-top">
+      <table id="arkusz-table">
+        <tbody>
+          {tableData.map((row, index) => (
+            <tr key={index}>
+              {row.map((cell, index) => (
+                <td key={index}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
+  </div>
   );
 };
 

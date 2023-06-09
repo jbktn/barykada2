@@ -9,6 +9,7 @@ const Stopien = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      // Pobierz dane z ciasteczka
       const id = document.cookie
         .split("; ")
         .find((row) => row.startsWith("userID="))
@@ -37,13 +38,12 @@ const Stopien = () => {
               case "wywiadowca":
                 if (stopien === "młodzik") {
                   url =
-                  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=0&single=true&output=tsv";
+                    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=0&single=true&output=tsv";
+                } else {
+                  url =
+                    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=53519936&single=true&output=tsv";
                 }
-                else
-                {
-                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=53519936&single=true&output=tsv";
-                }
-                
+
                 $.get(url, function (data) {
                   var rows = data.split("\n");
                   var table = [];
@@ -60,7 +60,7 @@ const Stopien = () => {
                     }
                   }
 
-                  for (var i = 1; i < rows.length; i++) {                    
+                  for (var i = 1; i < rows.length; i++) {
                     var cells = rows[i].replace(/\r/g, "").split("\t");
                     var row = [];
 
@@ -70,80 +70,69 @@ const Stopien = () => {
                     var cell = cells[0]; // Wyświetlanie tylko pierwszej kolumny
                     row.push(cell);
 
-                    var checkboxCell = (                      
-                        <input
-                          type="checkbox"                          
-                          disabled={true}
-                          defaultChecked={cells[columnId] === "TRUE"}
-                          
-                        />
-                      
-                    );      
-                    row.push(checkboxCell);
+                    var checkbox = cells[columnId] === "TRUE";
+                    row.push(checkbox);
 
                     table.push(row);
                   }
 
                   setTableData(table);
+
+                  // Zapisz tabelę jako cookie
+                  document.cookie = `stopienTable=${JSON.stringify(table)}`;
                 });
 
-                break;              
+                break;
               case "ćwik":
               case "HO":
               case "HR":
-
                 if (stopien === "ćwik") {
-                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=392764615&single=true&output=tsv";
+                  url =
+                    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=392764615&single=true&output=tsv";
+                } else if (stopien === "HO") {
+                  url =
+                    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=1499209745&single=true&output=tsv";
+                } else {
+                  url =
+                    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=1556109590&single=true&output=tsv";
                 }
-                else if (stopien === "HO")
-                {
-                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=1499209745&single=true&output=tsv";
-                }
-                else
-                {
-                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=1556109590&single=true&output=tsv";
-                }                
-                
+
                 $.get(url, function (data) {
                   var rows = data.split("\n");
-                  var table = [];                
-                  
+                  var table = [];
 
                   for (var j = 0; j < rows.length; j++) {
-                    if (rows[j].split("\t")[1].toLowerCase().replace(/\s/g, "") === id)
-                    {
-                      for (var i = j+1; i < rows.length; i++) {   
-                                        
+                    if (
+                      rows[j].split("\t")[1].toLowerCase().replace(/\s/g, "") === id
+                    ) {
+                      for (var i = j + 1; i < rows.length; i++) {
                         var cells = rows[i].replace(/\r/g, "").split("\t");
-                        if (cells[0] === "")
-                        {
+                        if (cells[0] === "") {
                           break;
-                        } 
+                        }
                         var row = [];
-    
-                        var indexCell = i-j + ". "; // Dodawanie numeracji
+
+                        var indexCell = i - j + ". "; // Dodawanie numeracji
                         row.push(indexCell);
-    
+
                         var cell = cells[0]; // Wyświetlanie tylko pierwszej kolumny
                         row.push(cell);
-    
-                        var checkboxCell = (                      
-                            <input
-                              type="checkbox"                          
-                              disabled={true}
-                              defaultChecked={cells[1] === "TRUE"}                              
-                            />                          
-                        );      
-                        row.push(checkboxCell);
-    
+
+                        var checkbox = cells[1] === "TRUE";
+                        row.push(checkbox);
+
                         table.push(row);
                       }
                       setTableData(table);
+
+                      // Zapisz tabelę jako cookie
+                      document.cookie = `stopienTable=${JSON.stringify(table)}`;
+
                       break;
-                    }   
+                    }
                   }
                 });
-                break;              
+                break;
               default:
                 console.log("default");
                 break;
@@ -156,6 +145,17 @@ const Stopien = () => {
       }
     };
 
+    // Pobierz wartość z cookie
+    const tableCookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("stopienTable="))
+      ?.split("=")[1];
+
+    if (tableCookie) {
+      // Jeśli cookie istnieje, sparsuj wartość cookie i ustaw tabelę jako tableData
+      const parsedTable = JSON.parse(tableCookie);
+      setTableData(parsedTable);
+    }
     fetchData();
   }, [navigate]);
 
@@ -186,18 +186,27 @@ const Stopien = () => {
         <div className="width-60">
           <table id="arkusz-table">
             <tbody>
-              {tableData.map((row, index) => (
-                <tr key={index}>
-                  {row.map((cell, index) => (
-                    <td key={index}>{cell}</td>
-                  ))}
-                </tr>
-              ))}
+            {tableData.map((row, index) => (
+              <tr key={index}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex}>
+                    {cellIndex === 2 ? (
+                      <input
+                        type="checkbox"
+                        disabled={true}
+                        checked={cell}
+                      />
+                    ) : (
+                      cell
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
             </tbody>
           </table>
         </div>
       </div>
-
     </div>
   );
 };
