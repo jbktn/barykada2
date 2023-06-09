@@ -45,32 +45,44 @@ const Login = () => {
   return (
     <div>
       <img className="flex logo margin-top" src={logo} alt="Logo"/>      
-      <div className="flex margin-top">
-        <div>
-          <input
-            type="text"
-            name="username"
-            placeholder="Login"
-            value={loginData.username}
-            onChange={handleInputChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Hasło"
-            value={loginData.password}
-            onChange={handleInputChange}
-          />
-          <button className="logo" onClick={handleLogin}>Zaloguj</button>
+      
+        <div className="flex margin-top">
+          <div className="login">
+            
+              <input className="login-input-l"
+                type="text"
+                name="username"
+                placeholder="Login"
+                value={loginData.username}
+                onChange={handleInputChange}
+              />
+            
+            
+              <input className="login-input-r"
+                type="password"
+                name="password"
+                placeholder="Hasło"
+                value={loginData.password}
+                onChange={handleInputChange}
+              />
+            
+            <button className="login-button" onClick={handleLogin}>Zaloguj</button>
+          </div>
+                 
 
-          {loginError && (
-            <p>Niepoprawne dane logowania. Spróbuj ponownie.</p>
-          )}
-
-          {isLoggedIn && user && <p>Witaj, {user.name}!</p>}
+          
         </div>
+        <div className="flex margin-top">
+          {loginError && (
+              <p>Niepoprawne dane logowania. Spróbuj ponownie.</p>
+            )}
+
+            {isLoggedIn && user && <p>Witaj, {user.name}!</p>}
+
+        </div>
+        
       </div>
-    </div>
+   
   );
 };
 
