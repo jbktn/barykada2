@@ -50,7 +50,6 @@ const Stopien = () => {
 
                   var columnId = 0;
 
-                  // Szukanie kolumny z wartością "jan" w pierwszym wierszu
                   var headerCells = rows[0].split("\t");
                   for (var j = 0; j < headerCells.length; j++) {
                     if (
@@ -90,19 +89,65 @@ const Stopien = () => {
 
                 break;              
               case "ćwik":
-                console.log("ćwik");
-                break;
               case "HO":
-                console.log("HO");
-                break;
               case "HR":
-                console.log("HR");
-                break;
+
+                if (stopien === "ćwik") {
+                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=392764615&single=true&output=tsv";
+                }
+                else if (stopien === "HO")
+                {
+                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=1499209745&single=true&output=tsv";
+                }
+                else
+                {
+                  url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSO1qr7jgXJwDrd5nGBUsLMf_R6pbcPYS2ZOtMchUt9msDnFVIhxTZkSofR5FxNkNWHNDEluG1vRapk/pub?gid=1556109590&single=true&output=tsv";
+                }                
+                
+                $.get(url, function (data) {
+                  var rows = data.split("\n");
+                  var table = [];                
+                  
+
+                  for (var j = 0; j < rows.length; j++) {
+                    if (rows[j].split("\t")[1].toLowerCase().replace(/\s/g, "") === id)
+                    {
+                      for (var i = j+1; i < rows.length; i++) {   
+                                        
+                        var cells = rows[i].replace(/\r/g, "").split("\t");
+                        if (cells[0] === "")
+                        {
+                          break;
+                        } 
+                        var row = [];
+    
+                        var indexCell = i-j + ". "; // Dodawanie numeracji
+                        row.push(indexCell);
+    
+                        var cell = cells[0]; // Wyświetlanie tylko pierwszej kolumny
+                        row.push(cell);
+    
+                        var checkboxCell = (                      
+                            <input
+                              type="checkbox"                          
+                              disabled={true}
+                              defaultChecked={cells[1] === "TRUE"}                              
+                            />                          
+                        );      
+                        row.push(checkboxCell);
+    
+                        table.push(row);
+                      }
+                      setTableData(table);
+                      break;
+                    }   
+                  }
+                });
+                break;              
               default:
                 console.log("default");
                 break;
             }
-
             break; // Przerwij pętlę po znalezieniu odpowiedniego wiersza
           }
         }
@@ -138,7 +183,7 @@ const Stopien = () => {
         </div>
       </header>
       <div className="flex margin-top">
-        <div>
+        <div className="width-60">
           <table id="arkusz-table">
             <tbody>
               {tableData.map((row, index) => (
