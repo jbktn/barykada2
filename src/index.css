@@ -166,6 +166,14 @@ body {
   margin-top: 5rem;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  width: 100%; 
+}
+
 
 .login {
   background-color: #302d3e;
@@ -209,4 +217,9 @@ body {
   font-weight:400;
   cursor: pointer;
   padding: 0.3rem 1.2rem 0.3rem 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.login-button:hover {
+  color: #00A54D;
 }

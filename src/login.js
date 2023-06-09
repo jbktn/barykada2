@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userData from "./login.json";
 import logo from "./logo.svg";
+import info from "./info.svg";
 
 const Login = () => {
   const navigate = useNavigate(); // Hook useNavigate
@@ -72,6 +73,12 @@ const Login = () => {
 
           
         </div>
+        <div className="flex">          
+          <img className="margin-top" src={info} alt="Info"/> 
+          <br/><p>Login to twoje imię i nazwisko (przykładowo: jankowalski)</p> 
+          <br/><p>Hasło to 3 pierwsze litery twojego imienia i nazwiska oraz 3 ostatnie twojego numeru PESEL (przykładowo: jankow334)</p>    
+        </div>
+        
         <div className="flex margin-top">
           {loginError && (
               <p>Niepoprawne dane logowania. Spróbuj ponownie.</p>
@@ -80,6 +87,7 @@ const Login = () => {
             {isLoggedIn && user && <p>Witaj, {user.name}!</p>}
 
         </div>
+
         
       </div>
    
