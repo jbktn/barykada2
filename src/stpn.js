@@ -173,6 +173,7 @@ const Stopien = () => {
             <li className="green-text">
               <Link to={`/stopien`}>Stopień</Link>
             </li>
+            <li><Link to={`/`}>Punktacja</Link></li>
             <li>
               <Link to={`/login`}>Wyloguj</Link>
             </li>

@@ -75,6 +75,7 @@ const Sprawnosci = () => {
           <li>
             <Link to={`/stopien`}>Stopień</Link>
           </li>
+          <li><Link to={`/`}>Punktacja</Link></li>
           <li>
             <Link to={`/login`}>Wyloguj</Link>
           </li>

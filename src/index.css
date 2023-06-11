@@ -160,11 +160,13 @@ table td {
   border-bottom: 1px solid rgb(33,51,33);
 }
 
+#arkusz-table tr:last-child td {
+  border-bottom: none;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: rgb(64, 94, 65);
-
-  
+  background-color: rgb(64, 94, 65);  
 }
 
 tr:nth-child(even) {background-color: rgb(57, 84, 58)}
