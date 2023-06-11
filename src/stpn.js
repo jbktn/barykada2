@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "./images/logo.svg";
 
 const Stopien = () => {
   const navigate = useNavigate();
@@ -77,6 +76,7 @@ const Stopien = () => {
                   }
 
                   setTableData(table);
+
 
                   // Zapisz tabelę jako cookie
                   document.cookie = `stopienTable=${JSON.stringify(table)}`;
@@ -184,10 +184,10 @@ const Stopien = () => {
       </header>
       <div className="flex margin-top">
         <div className="width-60">
-          <table id="arkusz-table">
-            <tbody>
+        <table id="arkusz-table">
+          <tbody>
             {tableData.map((row, index) => (
-              <tr key={index}>
+              <tr key={index} className={row[2] ? "checked" : ""}>
                 {row.map((cell, cellIndex) => (
                   <td key={cellIndex}>
                     {cellIndex === 2 ? (
@@ -203,8 +203,9 @@ const Stopien = () => {
                 ))}
               </tr>
             ))}
-            </tbody>
-          </table>
+          </tbody>
+        </table>
+
         </div>
       </div>
     </div>

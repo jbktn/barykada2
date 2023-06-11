@@ -12,6 +12,12 @@
   color: white;
 }
 
+.checked {
+  text-decoration: line-through;
+  opacity: 50%;
+}
+
+
 header {
   display: flex;  
   justify-content: space-between;
@@ -86,6 +92,8 @@ header {
   transform: scale(1.05);
 }
 
+
+
 .second-button:active {
   transform: scale(1);
   box-shadow: none;
@@ -132,7 +140,7 @@ input[type="checkbox"]:checked:after {
   transform: rotate(45deg);
   position: absolute;
   top: 12%;
-  left: 34%;  
+  left: 32%;  
 }
 
 /* Stylowanie tabeli */
@@ -143,7 +151,7 @@ table {
 
 table td {
   padding: 10px;
-  border: 1px solid white;
+  border-bottom: 1px solid rgb(33,51,33);
 }
 
 body {

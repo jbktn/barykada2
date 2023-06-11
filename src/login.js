@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userData from "./login.json";
-import logo from "./images/logo.svg";
 import info from "./images/info.svg";
 
 const Login = () => {
