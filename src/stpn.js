@@ -189,7 +189,7 @@ const Stopien = () => {
             {tableData.map((row, index) => (
               <tr key={index} className={row[2] ? "checked" : ""}>
                 {row.map((cell, cellIndex) => (
-                  <td key={cellIndex}>
+                  <td className={row[2] ? "checked" : ""}  key={cellIndex}>
                     {cellIndex === 2 ? (
                       <input
                         type="checkbox"
