@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import userData from "./login.json";
-import logo from "./logo.svg";
+import logo from "./images/logo.svg";
 
 const findUserNameById = (id) => {
   const user = userData.users.find((user) => user.id === id);
@@ -27,12 +27,14 @@ const Home = () => {
   return (
     <div>
       <header>   
-        <Link to={`/`}><img className="logo" src={logo} alt="Logo"/></Link>       
+        <Link to={`/`}>
+            <img className="logo" src={logo} alt="Logo"/>
+        </Link>
             <nav>
                 <ul className="nav__links">
                     <li><Link to={`/sprawnosci`}> Sprawności</Link></li>
                     <li><Link to={`/stopien`}>Stopień</Link></li>
-                    <li><Link to={`/login`}>inne</Link></li>
+                    <li><Link to={`/login`}>Wyloguj</Link></li>
                 </ul>
             </nav>
             <div className="second-button">

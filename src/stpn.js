@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "./logo.svg";
+import logo from "./images/logo.svg";
 
 const Stopien = () => {
   const navigate = useNavigate();
@@ -163,7 +163,7 @@ const Stopien = () => {
     <div>
       <header>
         <Link to={`/`}>
-          <img className="logo" src={logo} alt="Logo" />
+          <h1 className="logo2">Barykada</h1>
         </Link>
         <nav>
           <ul className="nav__links">
@@ -174,7 +174,7 @@ const Stopien = () => {
               <Link to={`/stopien`}>Stopień</Link>
             </li>
             <li>
-              <Link to={`/login`}>inne</Link>
+              <Link to={`/login`}>Wyloguj</Link>
             </li>
           </ul>
         </nav>

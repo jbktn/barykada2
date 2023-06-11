@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userData from "./login.json";
-import logo from "./logo.svg";
-import info from "./info.svg";
+import logo from "./images/logo.svg";
+import info from "./images/info.svg";
 
 const Login = () => {
   const navigate = useNavigate(); // Hook useNavigate
@@ -45,7 +45,9 @@ const Login = () => {
 
   return (
     <div>
-      <img className="flex logo margin-top" src={logo} alt="Logo"/>      
+        <div className="title">
+          <h1>Barykada</h1>
+        </div>
       
         <div className="flex margin-top">
           <div className="login">

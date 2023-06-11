@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
-import logo from "./logo.svg";
+import logo from "./images/logo.svg";
 
 const Sprawnosci = () => {
   const [tableData, setTableData] = useState([]);
@@ -76,7 +76,7 @@ const Sprawnosci = () => {
             <Link to={`/stopien`}>Stopień</Link>
           </li>
           <li>
-            <Link to={`/login`}>inne</Link>
+            <Link to={`/login`}>Wyloguj</Link>
           </li>
         </ul>
       </nav>
