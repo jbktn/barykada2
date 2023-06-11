@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/barykada2/static/css/main.2a3a22bb.css",
-    "main.js": "/barykada2/static/js/main.1e34ae50.js",
+    "main.css": "/barykada2/static/css/main.02a70452.css",
+    "main.js": "/barykada2/static/js/main.820f0ae0.js",
     "static/js/787.fc656ed9.chunk.js": "/barykada2/static/js/787.fc656ed9.chunk.js",
+    "static/media/logo.svg": "/barykada2/static/media/logo.2c51ecbd1031aa4b828db9eed2a25aff.svg",
     "index.html": "/barykada2/index.html",
-    "main.2a3a22bb.css.map": "/barykada2/static/css/main.2a3a22bb.css.map",
-    "main.1e34ae50.js.map": "/barykada2/static/js/main.1e34ae50.js.map",
+    "static/media/info.svg": "/barykada2/static/media/info.0084caf4b29e96385f45368b2a1812cc.svg",
+    "main.02a70452.css.map": "/barykada2/static/css/main.02a70452.css.map",
+    "main.820f0ae0.js.map": "/barykada2/static/js/main.820f0ae0.js.map",
     "787.fc656ed9.chunk.js.map": "/barykada2/static/js/787.fc656ed9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a3a22bb.css",
-    "static/js/main.1e34ae50.js"
+    "static/css/main.02a70452.css",
+    "static/js/main.820f0ae0.js"
   ]
 }
