@@ -1,7 +1,7 @@
 {
     "users": [
       {
-        "id": "jakubprazuch",
+        "id": "jakubprażuch",
         "password": "jakpra274",
         "name": "Jakub Prażuch",
         "role": "drużynowy"
@@ -67,7 +67,7 @@
         "role": "brak"
       },
       {
-        "id": "maksymilianbajorekdołba",
+        "id": "maksymilianbajorek-dołba",
         "password": "makbaj872",
         "name": "Maksymilian Bajorek-Dołba",
         "role": "brak"

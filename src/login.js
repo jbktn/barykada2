@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userData from "./login.json";
+import logo from "./logo.svg";
+import info from "./info.svg";
 
 const Login = () => {
   const navigate = useNavigate(); // Hook useNavigate
@@ -43,43 +45,52 @@ const Login = () => {
 
   return (
     <div>
-      <h1 className="py-2 px-2 text-white font-semibold text-2xl text-border-green bot-border">
-        40 KDH Barykada
-      </h1>
-      <div className="h-100vh flex text-white bg-green-900 items-center justify-center">
-        <div className="">
+      <img className="flex logo margin-top" src={logo} alt="Logo"/>      
+      
+        <div className="flex margin-top">
           <div className="login">
-            <div className="login-input-l">
-              <input
-                  type="text"
-                  name="username"
-                  placeholder="Login"
-                  value={loginData.username}
-                  onChange={handleInputChange}
+            
+              <input className="login-input-l"
+                type="text"
+                name="username"
+                placeholder="Login"
+                value={loginData.username}
+                onChange={handleInputChange}
               />
-            </div>
-            <div className="login-input-r">
-              <input
-                  type="password"
-                  name="password"
-                  placeholder="Hasło"
-                  value={loginData.password}
-                  onChange={handleInputChange}
+            
+            
+              <input className="login-input-r"
+                type="password"
+                name="password"
+                placeholder="Hasło"
+                value={loginData.password}
+                onChange={handleInputChange}
               />
-            </div>
-            <div className="login-button">
-              <button onClick={handleLogin}>Zaloguj</button>
-            </div>
+            
+            <button className="login-button" onClick={handleLogin}>Zaloguj</button>
           </div>
+                 
 
-          {loginError && (
-            <p>Niepoprawne dane logowania. Spróbuj ponownie.</p>
-          )}
-
-          {isLoggedIn && user && <p>Witaj, {user.name}!</p>}
+          
         </div>
+        <div className="flex">          
+          <img className="margin-top" src={info} alt="Info"/> 
+          <br/><p>Login to twoje imię i nazwisko (przykładowo: jankowalski)</p> 
+          <br/><p>Hasło to 3 pierwsze litery twojego imienia i nazwiska oraz 3 ostatnie twojego numeru PESEL (przykładowo: jankow334)</p>    
+        </div>
+        
+        <div className="flex margin-top">
+          {loginError && (
+              <p>Niepoprawne dane logowania. Spróbuj ponownie.</p>
+            )}
+
+            {isLoggedIn && user && <p>Witaj, {user.name}!</p>}
+
+        </div>
+
+        
       </div>
-    </div>
+   
   );
 };
 

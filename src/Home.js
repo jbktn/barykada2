@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import userData from "./login.json";
+import logo from "./logo.svg";
 
 const findUserNameById = (id) => {
   const user = userData.users.find((user) => user.id === id);
@@ -8,49 +9,50 @@ const findUserNameById = (id) => {
 };
 
 const Home = () => {
-    const id = document.cookie
-        .split("; ")
-        .find((row) => row.startsWith("userID="))
-        ?.split("=")[1];
+  const id = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("userID="))
+    ?.split("=")[1];
 
-    const navigate = useNavigate();
-    const userName = findUserNameById(id);
+  const navigate = useNavigate();
+  const userName = findUserNameById(id);
 
-    console.log(id);
+  React.useEffect(() => {
+    if (id === undefined) {
+      navigate("/login");
+      return;
+    }
+  }, [id, navigate]);
 
-    React.useEffect(() => {
-        if (id === undefined) {
-            navigate("/login");
-        }
-    }, [id, navigate]);
-
-    return (
+  return (
+    <div>
+      <header>   
+        <Link to={`/`}><img className="logo" src={logo} alt="Logo"/></Link>       
+            <nav>
+                <ul className="nav__links">
+                    <li><Link to={`/sprawnosci`}> Sprawności</Link></li>
+                    <li><Link to={`/stopien`}>Stopień</Link></li>
+                    <li><Link to={`/login`}>inne</Link></li>
+                </ul>
+            </nav>
+            <div className="second-button">
+              <Link to={`/`}>Twój profil</Link> 
+            </div>                      
+        </header>
+      <div className="flex margin-top">
         <div>
-            <h1 className="py-2 px-2 text-white font-semibold text-2xl text-border-green bot-border">
-                40 KDH Barykada
-            </h1>
-            <div className="h-100vh flex text-white bg-green-900 items-center justify-center">
-                <div>
-                    <h2 className="font-semibold px-3 py-3 text-3xl text-center border-2 border-white rounded">
-                        Wybierz jedną z opcji:
-                    </h2>
-                    <div className="text-black text-3xl flex items-center justify-center">
-                        <div className="px-4 py-4">
-                            <Link className="main-button" to="/Sprawnosci">
-                                Sprawności
-                            </Link>
-                        </div>
-                        <div className="px-4 py-4">
-                            <Link className="main-button" to="/Stopien">
-                                Stopień
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+          <h2 className="margin-top">
+            Witaj {userName}!
+          </h2>
+          <div className="flex margin-top">
+            <div className="">
 
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Home;
